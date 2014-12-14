@@ -58,7 +58,7 @@ mydata2$Activity[mydata2$Activity==6]<-"LAYING"
 library(reshape2)
 MeltData<-melt(mydata2,id=c(1,2),measure.vars = c(3:68))
 TidyData<-dcast(MeltData,Subject+Activity~variable,mean)
-
+setwd("..")
 write.table(TidyData,"TidyDataSet.txt",row.name = FALSE)
 
 
